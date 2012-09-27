@@ -63,7 +63,7 @@ if __name__ == "__main__":
 	
 	# output stations (without QuickMix)
 	print "users stations:"
-	for station in pandora.getStationList():
+	for station in pandora.get_station_list():
 		if station['isQuickMix']: 
 			quickmix = station
 			print "\t" + station['stationName'] + "*"
@@ -71,11 +71,11 @@ if __name__ == "__main__":
 			print "\t" + station['stationName']
 	
 	# switch to quickmix station
-	pandora.switchStation(quickmix)
+	pandora.switch_station(quickmix)
 	
 	# get one song from quickmix
 	print "next song from quickmix:"
-	next =  pandora.getNextSong()
+	next =	pandora.get_next_song()
 	print next['artistName'] + ': ' + next['songName']
 	print next['audioUrlMap']['highQuality']['audioUrl']
 	
